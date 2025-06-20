@@ -9,10 +9,8 @@
 
 ]]
 
--- EDITED BY WAYLON
-repeat task.wait() until game:IsLoaded()
 if debugX then
-	warn('Initializing Rayfield')
+	warn('Initialising Rayfield')
 end
 
 local function getService(name)
@@ -1555,7 +1553,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 	if Rayfield:FindFirstChild('Loading') then
 		if getgenv and not getgenv().rayfieldCached then
 			Rayfield.Enabled = true
-			Rayfield.Loading.Visible = false
+			Rayfield.Loading.Visible = true
 
 			task.wait(1.4)
 			Rayfield.Loading.Visible = false
@@ -1662,8 +1660,8 @@ function RayfieldLibrary:CreateWindow(Settings)
 			while true do
 				task.wait(math.random(180, 600))
 				RayfieldLibrary:Notify({
-					Title = "Enjoying the script?",
-					Content = "Repost it then on scriptblox.com or rscripts.net or more",
+					Title = "Rayfield Interface",
+					Content = "Enjoying this UI library? Find it at sirius.menu/discord",
 					Duration = 7,
 					Image = 4370033185,
 				})
