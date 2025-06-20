@@ -53,12 +53,19 @@ Lighting.FogColor = Color3.fromRGB(5, 5, 5)
 end
 
 getgenv().Headless = nil
+
 if getgenv().Headless then
-local head = char:FindFirstChild("Head")
-if head then
-    head:Destroy()
+    task.spawn(function()
+        while getgenv().Headless do
+            local head = char:FindFirstChild("Head")
+            if head then
+                head:Destroy()
+            end
+            task.wait(1)
+        end
+    end)
 end
-end
+
 
 local function getGameName()
 
